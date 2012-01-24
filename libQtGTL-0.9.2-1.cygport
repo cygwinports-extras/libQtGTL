@@ -1,0 +1,10 @@
+inherit qt4-cmake
+
+
+HOMEPAGE="http://www.opengtl.org/"
+SRC_URI="http://download.opengtl.org/${P}.tar.bz2"
+PATCH_URI="0.9.2-cmake.patch"
+
+PKG_NAMES="libQtGTL0.1 libQtGTL-devel"
+libQtGTL0_1_CONTENTS="usr/bin/*-0.1.dll"
+libQtGTL_devel_CONTENTS="usr/include/ usr/lib/ usr/share/doc/"

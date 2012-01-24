@@ -1,0 +1,49 @@
+--- origsrc/libQtGTL-0.9.2/CMakeLists.txt	2012-01-12 13:56:38.000000000 -0600
++++ src/libQtGTL-0.9.2/CMakeLists.txt	2012-01-24 15:00:32.649174800 -0600
+@@ -26,7 +26,6 @@ add_subdirectory( examples )
+ add_subdirectory( QtShiva )
+ add_subdirectory( QtGTL )
+ 
+-i
+ find_package(OpenRijn )
+ 
+ if (OPENRIJN_FOUND)
+--- origsrc/libQtGTL-0.9.2/QtGTL/CMakeLists.txt	2012-01-12 13:56:38.000000000 -0600
++++ src/libQtGTL-0.9.2/QtGTL/CMakeLists.txt	2012-01-24 15:02:16.900137600 -0600
+@@ -15,7 +15,9 @@ qt4_automoc(${libQtShiva_SRCS})
+ add_library(QtGTL SHARED ${libQtGTL_SRCS})
+ target_link_libraries(QtGTL ${GTLCORE_LIBRARIES} ${QT_QTGUI_LIBRARY} ${QT_QTCORE_LIBRARY} ${OPENSHIVA_LIBRARIES} )
+ 
+-install(TARGETS QtGTL DESTINATION ${LIB_INSTALL_DIR} )
++install(TARGETS QtGTL LIBRARY DESTINATION ${LIB_INSTALL_DIR}
++                      RUNTIME DESTINATION bin
++                      ARCHIVE DESTINATION ${LIB_INSTALL_DIR})
+ install( FILES QImageBuffer.h QImageImage.h DESTINATION ${INCLUDE_INSTALL_DIR}/QtGTL )
+ 
+ # Set the ABI version of the library
+--- origsrc/libQtGTL-0.9.2/QtRijn/CMakeLists.txt	2012-01-12 13:56:38.000000000 -0600
++++ src/libQtGTL-0.9.2/QtRijn/CMakeLists.txt	2012-01-24 15:02:51.332107000 -0600
+@@ -16,7 +16,9 @@ qt4_automoc(${libQtRijn_SRCS})
+ add_library( QtRijn SHARED ${libQtRijn_SRCS})
+ target_link_libraries( QtRijn ${QT_QTGUI_LIBRARY} ${OPENRIJN_LIBRARIES} )
+ 
+-install(TARGETS QtRijn DESTINATION ${LIB_INSTALL_DIR} )
++install(TARGETS QtRijn LIBRARY DESTINATION ${LIB_INSTALL_DIR}
++                       RUNTIME DESTINATION bin
++                       ARCHIVE DESTINATION ${LIB_INSTALL_DIR})
+ install( FILES Canvas.h Palette.h DESTINATION ${INCLUDE_INSTALL_DIR}/QtRijn )
+ 
+ # Set the ABI version of the library
+--- origsrc/libQtGTL-0.9.2/QtShiva/CMakeLists.txt	2012-01-12 13:56:38.000000000 -0600
++++ src/libQtGTL-0.9.2/QtShiva/CMakeLists.txt	2012-01-24 15:03:03.075778700 -0600
+@@ -27,7 +27,9 @@ qt4_automoc(${libQtShiva_SRCS})
+ add_library( QtShiva SHARED ${libQtShiva_SRCS})
+ target_link_libraries( QtShiva ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${OPENSHIVA_LIBRARIES} )
+ 
+-install(TARGETS QtShiva DESTINATION ${LIB_INSTALL_DIR} )
++install(TARGETS QtShiva LIBRARY DESTINATION ${LIB_INSTALL_DIR}
++                        RUNTIME DESTINATION bin
++                        ARCHIVE DESTINATION ${LIB_INSTALL_DIR})
+ install( FILES ParametersWidgetBase.h KernelParametersWidget.h SourceParametersWidget.h DESTINATION ${INCLUDE_INSTALL_DIR}/QtShiva )
+ 
+ # Set the ABI version of the library

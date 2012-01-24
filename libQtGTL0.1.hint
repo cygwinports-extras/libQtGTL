@@ -1,0 +1,8 @@
+category: KDE
+requires: libgcc1 libOpenGTL0.8 libQtCore4 libQtGui4 libstdc++6
+external-source: libQtGTL
+sdesc: "Qt OpenGTL interface (runtime)"
+ldesc: "The Graphics Transformation Languages is a set of library for 
+using and integrating transformation algorithms (such as filter or color 
+conversion) in graphics applications. The goal is to provide the tools, 
+languages and libraries to create generic transformation for graphics."
